@@ -1,25 +1,20 @@
 package codingtraining;
 
-import java.util.ArrayList;
-import java.util.List;
-
 class Solution {
-    public int[] solution(int[] arr) {
-        List<Integer> list = new ArrayList<>();
-        int i = 1;
-        for (Integer integer : arr) list.add(integer);
-        while(list.size() <= (i&(i-1))) {
-        	list.add(0);
-        	i++;
-        }
-        return list.stream().mapToInt(Integer::intValue).toArray();
+    public int solution(String[] order) {
+    	int answer = 0;
+        for (String string : order) {
+        	if (string.contains("cafelatte")) answer += 5000;
+        	else answer += 4500;
+		} // foreach
+        return answer;
     }
 }
 
-// 문제 요약 : arr의 '길이'가 2의 거듭제곱이 되도록 arr뒤에 정수 0추가. 0을 최소로 추가하여 배열반환
+// 문제 요약 : 아메리카노 : 4500, 카페 라테 : 5000 아무거나 : 아메리카노
+//			결제 금액(총액) 반환
+// 			마지막 글자 - americano, cafelatte, anything
 
-
-
-// 112
+// 132
 
 
