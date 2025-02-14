@@ -29,8 +29,19 @@ class Solution {
 	
 	public int solution(String my_string, String is_prefix) {
         int answer = 0;
-        return answer;
-    }
+        String str = "";
+        ArrayList<String> list = new ArrayList<String>();
+        for(int i = 0; i < my_string.length(); i++) {
+        	str = my_string.substring(i);
+        	list.add(str);
+        }
+        if(list.contains(is_prefix)) {
+        	return answer = 1;
+        }
+        else
+        	return answer = 0;
+        
+    }syso
 }
 	
 	

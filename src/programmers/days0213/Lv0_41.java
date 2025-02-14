@@ -16,7 +16,9 @@ my_strings	                                            parts	                   
  */
 public class Lv0_41 {
 
-
+public static void main(String[] args) {
+	
+}
 	public static String solution(String[] my_strings, int[][] parts) {
         
         ArrayList<String> my_str = new ArrayList<String>();
