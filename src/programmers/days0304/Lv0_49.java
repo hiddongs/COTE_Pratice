@@ -1,7 +1,4 @@
-package programmers.solution;
-
-import java.util.ArrayList;
-import java.util.Arrays;
+package programmers.days0304;
 
 /*
 
@@ -14,13 +11,20 @@ q	    r	code	                result
 3	    1	"qjnwezgrpirldywt"	    "jerry"
 1	    0	"programmers"	        "programmers"
  */
-class Solution {
+public class Lv0_49 {
 	public String solution(int q, int r, String code) {
         String answer = "";
+        
+        for(int i = 0; i < code.length(); i++) {
+        	
+        	
+        	if((i % q) == r) {
+        		answer += code.charAt(i);
+        		
+        	}
+        
+        
+        }
         return answer;
     }
-
 }
-	
-	
-	

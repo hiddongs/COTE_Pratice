@@ -18,5 +18,39 @@ my_string	is_prefix	result
 "banana"	"bananan"	0
  */
 public class Lv0_46 {
+	public static int solution(String my_string, String is_prefix) {
+        int answer = 0;
+        String str = "";
+        if (my_string.startsWith(is_prefix)) {
+            return 1;
+        } else {
+            return 0;
+        }
+        // 접두사
+//        ArrayList<String> list = new ArrayList<String>();
+//        StringBuffer bf = new StringBuffer();
+//        for(int i = 0; i < my_string.length(); i++) {
+//        	str = my_string.substring(i);
+//        	list.add(str);
+//        	
+//        	    
+//             bf.append(list);
+//
+//        	
+//        }
+//        
+//       for(int i = 0; i < is_prefix.length(); i++) {
+//        if(list.contains(is_prefix)) {
+//        	return answer = 1;
+//        }
+//        else 
+//        	return answer = 0;
+//       }
+//	return answer;
+//       
+//   
+//        
+//	}
+}
 
 }
