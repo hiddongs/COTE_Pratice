@@ -12,19 +12,8 @@ q	    r	code	                result
 1	    0	"programmers"	        "programmers"
  */
 public class Lv0_49 {
-	public String solution(int q, int r, String code) {
-        String answer = "";
-        
-        for(int i = 0; i < code.length(); i++) {
-        	
-        	
-        	if((i % q) == r) {
-        		answer += code.charAt(i);
-        		
-        	}
-        
-        
-        }
-        return answer;
-    }
+	  public int[] solution(String my_string) {
+	        int[] answer = {};
+	        return answer;
+	    }
 }
