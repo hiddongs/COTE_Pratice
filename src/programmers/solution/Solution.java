@@ -2,25 +2,35 @@ package programmers.solution;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+
 
 /*
-
 문제 설명
-두 정수 q, r과 문자열 code가 주어질 때, code의 각 인덱스를 q로 나누었을 때 나머지가 r인 위치의 문자를 앞에서부터 순서대로 이어 붙인 문자열을 return 하는 solution 함수를 작성해 주세요.
+정수 start_num와 end_num가 주어질 때, start_num에서 end_num까지 1씩 감소하는 수들을 차례로 담은 리스트를 return하도록 solution 함수를 완성해주세요.
 
-
-입출력     예
-q	    r	code	                result
-3	    1	"qjnwezgrpirldywt"	    "jerry"
-1	    0	"programmers"	        "programmers"
+제한사항
+0 ≤ end_num ≤ start_num ≤ 50
+입출력 예
+start_num	        end_num	     result
+10	                3	         [10, 9, 8, 7, 6, 5, 4, 3]
  */
 class Solution {
-	public String solution(int q, int r, String code) {
-        String answer = "";
-        return answer;
-    }
 
+	  public int[] solution(int start_num, int end_num) {
+	    
+	        Integer [] answers = {}; 
+	        int size = start_num-end_num;
+	        answers = new Integer[size+1];
+	        for(int i = size; i > end_num; i--) {
+	        	answers[i] += start_num;
+	        	start_num--;
+	        }
+	        
+	        Arrays.sort(answers,Collections.reverseOrder());
+	        return Arrays.stream(answers).mapToInt(Integer::intValue).toArray();
+	    }
 }
-	
-	
+
+
 	
