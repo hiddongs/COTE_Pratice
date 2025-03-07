@@ -1,35 +1,43 @@
 package programmers.solution;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
+
+import java.util.List;
 
 
 /*
 문제 설명
-정수 start_num와 end_num가 주어질 때, start_num에서 end_num까지 1씩 감소하는 수들을 차례로 담은 리스트를 return하도록 solution 함수를 완성해주세요.
+정수 배열 arr가 주어집니다. 이때 arr의 원소는 1 또는 0입니다. 정수 idx가 주어졌을 때, idx보다 크면서 배열의 값이 1인 가장 작은 인덱스를 찾아서 반환하는 solution 함수를 완성해 주세요.
+
+단, 만약 그러한 인덱스가 없다면 -1을 반환합니다.
 
 제한사항
-0 ≤ end_num ≤ start_num ≤ 50
+3 ≤ arr의 길이 ≤ 100'000
+arr의 원소는 전부 1 또는 0입니다.
 입출력 예
-start_num	        end_num	     result
-10	                3	         [10, 9, 8, 7, 6, 5, 4, 3]
+arr	                  idx	result
+[0, 0, 0, 1]	      1	    3
+[1, 0, 0, 1, 0, 0]	  4	    -1
+[1, 1, 1, 1, 0]	      3	    3
  */
 class Solution {
 
-	  public int[] solution(int start_num, int end_num) {
-	    
-	        Integer [] answers = {}; 
-	        int size = start_num-end_num;
-	        answers = new Integer[size+1];
-	        for(int i = size; i > end_num; i--) {
-	        	answers[i] += start_num;
-	        	start_num--;
-	        }
-	        
-	        Arrays.sort(answers,Collections.reverseOrder());
-	        return Arrays.stream(answers).mapToInt(Integer::intValue).toArray();
+
+	public int solution(int[] arr, int idx) {
+		
+
+	   
+	    for(int i = idx + 1;  i < arr.length; i++) {
+	    	if(arr[i] == 1) {
+	    		return i;
+	    	}
+	    	
 	    }
+	    return -1;
+	    
+	  
+	}
+	
 }
 
 

@@ -1,6 +1,7 @@
 package programmers.days0306;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /*
@@ -20,38 +21,75 @@ n	slicer	     num_list	                result
 4	[1, 5, 2]	[1, 2, 3, 4, 5, 6, 7, 8, 9]	[2, 4, 6]
  */
 public class Lv0_55 {
-	public int[] solution(int n, int[] slicer, int[] num_list) {
-		int[] answer = {};
-		List<Integer> list = new ArrayList<Integer>();
-		List<Integer> list2 = new ArrayList<Integer>();
-		for(int i = 0; i < num_list.length; i++) {
-			list.add(num_list[i]);
-		}
+//	public int[] solution(int n, int[] slicer, int[] num_list) {
+//	
+//		List<Integer> list = new ArrayList<Integer>();
+//		List<Integer> list2 = new ArrayList<Integer>();
+//		for(int i = 0; i < num_list.length; i++) {
+//			list.add(num_list[i]);
+//		}
+//
+//		switch (n) {
+//
+//		 case 1: {
+//			 
+//			 list2 = list.subList(0, slicer[1]+1);
+//			 break;
+//		 }
+//		 case 2:{
+//
+//			 list2 = list.subList(slicer[0], list.size());
+//			 break;
+//		 }
+//		 case 3:{
+//		 	 list2 =list.subList(slicer[0], slicer[1]);
+//		 	break;
+//		 }
+//		 case 4:{
+//			 
+//			 for(int i = list.get(slicer[0]); i <= list.get(slicer[1]); i++){
+//				
+//				 if(i < list.size()) {
+//					 list2.add(list.get(i));
+//					 }
+//				
+//			 }
+//			 break;
+//		
+//			 
+//		 }
+//		}
+//
+//		 return list2.stream().mapToInt(Integer::intValue).toArray();
+//		
+//	}
+	  public int[] solution(int n, int[] slicer, int[] num_list) {
+	        int a = slicer[0], b = slicer[1], c = slicer[2]; 
+	        int[] result = null;
 
-		switch (n) {
+	        switch (n) {
+	            case 1:
+	                result = Arrays.copyOfRange(num_list, 0, b + 1);
+	                break;
 
-		 case 1: {
-			 list = list.subList(num_list[0], slicer[1]);
-		 }
-		 case 2:{
+	            case 2:
+	                result = Arrays.copyOfRange(num_list, a, num_list.length);
+	                break;
 
-			 list = list.subList(slicer[0], list.size()-1);
-		 }
-		 case 3:{
-		 	 list =list.subList(slicer[0], slicer[1]);
-		 }
-		 case 4:{
-			 list2.add(list.get(num_list[slicer[0]]));
-			 for(int i = list.get(slicer[0]); i < list.get(slicer[1]); i++){
-				 list2.add(list.get(num_list[i+2]));
-			 }
-			 return list2.stream().mapToInt(Integer::intValue).toArray();
-			 
-		 }
-		}
+	            case 3:
+	                result = Arrays.copyOfRange(num_list, a, b + 1);
+	                break;
 
-		return answer = list.stream().mapToInt(Integer::intValue).toArray();
-	}
+	            case 4:
+	                List<Integer> list = new ArrayList<>();
+	                for (int i = a; i <= b; i += c) {
+	                    list.add(num_list[i]);
+	                }
+	                result = list.stream().mapToInt(Integer::intValue).toArray();
+	                break;
+	        }
+	         return result;
+	    }
 
 }
 
