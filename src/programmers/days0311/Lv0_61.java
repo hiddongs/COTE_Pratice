@@ -1,5 +1,7 @@
 package programmers.days0311;
 
+import java.util.Arrays;
+
 /*
 
 문제 설명
@@ -15,5 +17,22 @@ num_list	         n	    result
 [5, 2, 1, 7, 5]	     3	    [7, 5, 5, 2, 1]
  */
 public class Lv0_61 {
+	
+	 public int[] solution(int[] num_list, int n) {
+	        int[] answer = {};
+	        
+	        int[] first = Arrays.copyOfRange(num_list, n, num_list.length);  // 뒤쪽
+	        int[] second = Arrays.copyOfRange(num_list, 0, n);              // 앞쪽
+	        answer =  new int[first.length + second.length];
+	               
+         
+         System.arraycopy(first, 0, answer, 0, first.length);
+         System.arraycopy(second, 0, answer, first.length, second.length);
+         
+         return answer;
+
+	
+	      
+	    }
 
 }
