@@ -1,8 +1,6 @@
-package programmers.solution;
+package programmers.days0811;
 
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
 
 /*
  * 
@@ -16,9 +14,10 @@ num_list	        n	result
  * 
  */
 
- 
-class Solution {
+public class Lv0_64 {
+
 	public int[] solution(int[] num_list, int n) {
+		
 		  int[] answer = {};
 	        ArrayList<Integer> list = new ArrayList<Integer>();
 	        
@@ -31,7 +30,3 @@ class Solution {
 	        return list.stream().mapToInt(Integer::intValue).toArray();
 	    }
 }
-
-                            
-
-	
